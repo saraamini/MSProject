@@ -1,1 +1,6 @@
+bokeh==0.12.14
+Flask==0.12.2
 numpy==1.14.1
+pandas==0.22.0
+requests==2.18.4
+simplejson==3.13.2
