@@ -1,0 +1,35 @@
+<!doctype html>
+
+<title>TDI Milestone Project</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_lulu.css')}}'>
+<h2>
+  <a class="nav-link" href="https://github.com/thedataincubator/flask-framework">GitHub</a>
+</h2>
+
+
+<div class=page>
+
+  <h1>TDI Milestone Project</h1>
+  <div class=metanav>
+
+<h4>
+You can find the ticker symbol <a href="http://www.google.com">here</a>
+</h4>
+
+<form id='info' method='post' action='graph' > <!-- action is the URL you want to move to next-->
+   
+<p>Ticker symbol: <input type='text' name='ticker' placeholder='GOOG' /></p>
+          <p>
+          <input type="checkbox" name='features' value='close' />Closing price<br>
+          <input type="checkbox" name='features' value='adj_close' />Adjusted closing price<br>
+          <input type="checkbox" name='features' value='open' />Opening price<br>
+          <input type="checkbox" name='features' value='adj_open' />Adjusted opening price<br>
+          </p> 
+
+   <p>
+   <input type='submit' value='Submit' /> <!-- value is the text that will appear on the button. -->
+   </p>
+</form>
+
+</div>
+</div>
