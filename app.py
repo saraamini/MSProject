@@ -12,18 +12,16 @@ from bokeh.embed import components
 from bokeh.models import DatetimeTickFormatter
 from bokeh.palettes import Spectral4
 from math import pi
-from boto.s3.connection import S3Connection
 
 def FindData(ticker,features):
-#  SaraKEY = str(S3Connection(os.environ['myQuandlKEY']))
   end = datetime.datetime.now()
   end_date = end.strftime("%Y-%m-%d")
   start = end + dateutil.relativedelta.relativedelta(months=-1)
   start_date = start.strftime("%Y-%m-%d")
 
   cols = ",".join(features)
-  url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?&ticker=' + ticker + '&qopts.columns=date,' + cols +'&api_key=exyLM3h8LgKswzt_-gsx'
-#  url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?&ticker=' + ticker + '&qopts.columns=date,' + cols +'&api_key=' + SaraKEY
+ # url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?&ticker=' + ticker + '&qopts.columns=date,' + cols +'&api_key=exyLM3h8LgKswzt_-gsx'
+  url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?&ticker=' + ticker + '&qopts.columns=date,' + cols +'&api_key=' + SaraKEY
 
   r = requests.get(url).json()   
   r = pd.DataFrame(r[u'datatable'][u'data']) 
@@ -75,6 +73,7 @@ def responses():
 
 
 if __name__ == '__main__':
+  SaraKEY = os.environ.get('myQuandlKEY')
   port = int(os.environ.get("PORT", 5000))
   app.run(host='0.0.0.0', port=port)
 #  app.run(port=33507)

@@ -4,4 +4,3 @@ numpy==1.14.1
 pandas==0.22.0
 requests==2.18.4
 simplejson==3.13.2
-boto==2.46.1
