@@ -20,7 +20,6 @@ def FindData(ticker,features):
   start_date = start.strftime("%Y-%m-%d")
 
   cols = ",".join(features)
- # url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?&ticker=' + ticker + '&qopts.columns=date,' + cols +'&api_key=exyLM3h8LgKswzt_-gsx'
   url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?&ticker=' + ticker + '&qopts.columns=date,' + cols +'&api_key=' + SaraKEY
 
   r = requests.get(url).json()   
