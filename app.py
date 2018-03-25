@@ -15,7 +15,7 @@ from math import pi
 from boto.s3.connection import S3Connection
 
 def FindData(ticker,features):
-  myQuandlKEY = S3Connection(os.environ['myQuandlKEY'])
+  myQuandlKEY = str(S3Connection(os.environ['myQuandlKEY']))
   end = datetime.datetime.now()
   end_date = end.strftime("%Y-%m-%d")
   start = end + dateutil.relativedelta.relativedelta(months=-1)
